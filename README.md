@@ -1,4 +1,4 @@
-# Dad Chat 
+# Voting Dapp 
 A decentralized voting platform built with Solidity, React, Next.js and Ethers.js. Users can connect their wallet, view candidates, and vote in real-time.
 
 ## Tech Stack
