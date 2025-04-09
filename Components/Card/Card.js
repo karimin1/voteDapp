@@ -3,7 +3,7 @@ import Image from 'next/image';
 //INERNAL IMPOR
 import Style from './Card.module.css'
 import images from '../../assets'
-function Card({candidateArray,giveVote}) {
+const Card=({candidateArray,giveVote}) =>{
     console.log('candidateArray',candidateArray)
     return (
         <div className={Style.card}>
@@ -26,7 +26,7 @@ function Card({candidateArray,giveVote}) {
                     <p> {el[1]} </p> 
                     </div> 
                     <div className={Style.card_button}> 
-                    <button onClick={()=>giveVote({id:el[1].toNumber(),address:el[6]})}> Give Vote</button> 
+                    <button onClick={()=>giveVote({id:el[2].toNumber(),address:el[6]})}> Give Vote</button> 
                     </div> 
 
                 </div>   

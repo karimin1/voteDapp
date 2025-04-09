@@ -81,25 +81,8 @@ return candidateAddress;
 function getCandidateLength()public view returns (uint256){
     return candidateAddress.length;
 }
-function getCandidateData(address _address)public view returns( 
-    uint256 ,
-    string memory ,
-    string  memory,
-    string  memory,
-    uint256 ,
-    address ,
-    string memory){
-    Candidate storage candidate= candidates[_address];
-    return(
-candidate.candidateId,
-candidate.age,
-candidate.name,
-candidate.image,
-candidate.voteCount,
-candidate._address,
-candidate.ipfs
+    candidateIndex.push(singleCandidateData[4].toNumber());
 
-    );
 }
 //VOTER SECTION
 function VoteRight(

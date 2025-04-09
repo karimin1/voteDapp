@@ -41,7 +41,7 @@ const CandidateRegistration=()=> {
     });
     useEffect(()=>{
       getAllCandidate();
-      console.log('allVocandidates',candidateArray)
+     
     },[])
     return (
         <div className={Style.createVoter}>
@@ -74,13 +74,13 @@ const CandidateRegistration=()=> {
                    {candidateArray.map((el,i)=>{
                         <div key={i+1} className={Style.card_box}> 
                         <div  className={Style.image}> 
-                        <Image src='' alt='profile photo' />
+                        <Image src={el[3]} alt='profile photo' />
                         </div>
                         
                         <div className={Style.card_info}> 
-                        <p>Name</p>
-                        <p> Address</p>
-                        <p>Details</p>
+                        <p>{el[1]}#{el[2].toNumber()}</p>
+                        <p> {el[0]}</p>
+                        <p>Address:{el[5].slice(0,10)}...</p>
                           </div>  
                           </div> 
                      })}

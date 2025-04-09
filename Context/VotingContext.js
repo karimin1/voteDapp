@@ -1,7 +1,7 @@
 'use client'
 import React,{useEffect,useState,useContext} from 'react';
 require('dotenv').config();
-import {ethers}from 'ethers';
+import {ethers, id}from 'ethers';
 import Web3Modal from 'web3modal';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -206,7 +206,14 @@ router.push('/voteList')
 
    const giveVote=async(id)=>{
     try{
-
+        const voterId=id.id;
+        const voterAddress=id.address;
+        const web3modal=new Web3Modal();
+     const connection = await web3modal.connect();
+     const provider= new ethers.BrowserProvider(connection);
+     const signer= await provider.getSigner();
+     const contract= fetchContract(signer);
+     const voterLists=await contract.vote(voterAddress,voterId);
     }catch(error){
          console.log(error);
     }
